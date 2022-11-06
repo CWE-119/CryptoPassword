@@ -1,15 +1,11 @@
-# API_ cryptography
+# todo server message theke random value niye tmr random e push kore "generated_seed = apiNumber ** (ei khane boshate
+#  hobe) " API_ cryptography
 import requests
 import random
 import socket
 
 API_URL = "https://api-inference.huggingface.co/models/xlm-roberta-base"
 headers = {"Authorization": f"Bearer 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"}
-
-
-def user_phase_input():
-    input_phrase = input("Give me a random string of words: Put <mask> in the 3rd last word!")
-    return input_phrase
 
 
 def query(payload):
@@ -21,7 +17,7 @@ def query(payload):
 # The user should be giving a unique response phrase to generate the key words
 
 output = query({
-    "inputs": "The answer to the universe is <mask> and nothing .",
+    "inputs": "The number is <mask> and nothing .",
 })
 
 print(output)
@@ -37,7 +33,7 @@ for i in output:
             passwords_keys.append(x[-3])
 print(passwords_keys)
 
-dictionary = "abcdefghijklmnopqrstuvwxyz"
+dictionary = "abcdefghijklmnopqrstuvwxyz1234567890"
 
 
 def key_generator(x):
@@ -73,6 +69,12 @@ print(received_message)
 lists = received_message.split(" ")
 print(lists)
 
-generated_seed = (apiNumber ** .99)
+
+def generate_partial_phrase(r):
+    random.seed(r)
+    r = random.random()
+    return r
+
+generated_seed = apiNumber ** .99
 print(f"This is the generated seed: {generated_seed}")
 client.send(f"{generated_seed}\n".encode('utf-8'))
