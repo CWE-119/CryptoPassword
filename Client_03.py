@@ -73,6 +73,6 @@ print(received_message)
 lists = received_message.split(" ")
 print(lists)
 
-generated_seed = apiNumber
+generated_seed = (apiNumber ** .99)
 print(f"This is the generated seed: {generated_seed}")
 client.send(f"{generated_seed}\n".encode('utf-8'))
