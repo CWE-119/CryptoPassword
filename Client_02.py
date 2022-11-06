@@ -4,17 +4,11 @@ import time
 times = time.gmtime(0)
 epoch = time.asctime(times)
 t = round(time.time()*1000)
-
-def decimalToBinary(b):
-    assert int(b) == b, "Perimeter must be an int"
-    if b == 0:
-        return 0
-    else:
-        return b % 2 + 10 * decimalToBinary(int(b / 2))
-print(decimalToBinary(int(t)))
+t = str(t)
+t = t[5:]
+t = int(t)
 
 
-# better to use the wireless LAN adapter Wi-Fi IP
 # this is your device ip address
 HOST = '127.0.0.1'
 
@@ -43,6 +37,7 @@ print(received_message)
 lists = received_message.split(" ")
 print(lists)
 
-generated_seed = str(decimalToBinary(int(t)))
+
+generated_seed = t
 print(f"This is the generated seed: {generated_seed}")
 client.send(f"{generated_seed}\n".encode('utf-8'))
