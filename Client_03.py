@@ -4,6 +4,9 @@ import requests
 import random
 import socket
 
+import re
+import math
+
 API_URL = "https://api-inference.huggingface.co/models/xlm-roberta-base"
 headers = {"Authorization": f"Bearer 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"}
 
@@ -20,7 +23,6 @@ output = query({
     "inputs": "The number is <mask> and nothing .",
 })
 
-print(output)
 passwords_keys = []
 
 for i in output:
@@ -33,7 +35,7 @@ for i in output:
             passwords_keys.append(x[-3])
 print(passwords_keys)
 
-dictionary = "abcdefghijklmnopqrstuvwxyz1234567890"
+dictionary = "1234567890"
 
 
 def key_generator(x):
@@ -41,7 +43,6 @@ def key_generator(x):
     key = random.choice(lists)
     print(f"The chosen key phrase was: {key}")
     return key
-
 
 generated_key = key_generator(passwords_keys)
 key_number = 0
@@ -51,6 +52,7 @@ for i in generated_key:
 
 # print(f"The final key is: {key_number}")
 apiNumber = key_number
+
 # sent to server
 HOST = '127.0.0.1'
 
@@ -66,15 +68,19 @@ print(received_message)
 
 received_message = client.recv(1024).decode('utf-8')
 print(received_message)
+some_string = received_message
+num = re.findall(r'\d+', some_string)
+s = [str(i) for i in num]
+num = str("".join(s))
+num = num[2:-4]
+num = int(num)
+
+# apiNumber = (int(apiNumber) ** float(num))
+print(f"number is {num}")
 lists = received_message.split(" ")
 print(lists)
 
 
-def generate_partial_phrase(r):
-    random.seed(r)
-    r = random.random()
-    return r
-
-generated_seed = apiNumber ** .99
+generated_seed = apiNumber + num
 print(f"This is the generated seed: {generated_seed}")
 client.send(f"{generated_seed}\n".encode('utf-8'))

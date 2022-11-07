@@ -41,7 +41,7 @@ while True:
 
     communication_socket.send(f"Got your message, Thank You!".encode('utf-8'))
     communication_socket.send(
-        f"Your random seed is {str(generate_partial_phrase(random.randint(0, 1000)))}".encode('utf-8'))
+        f"Your random seed is {str(generate_partial_phrase(abs(random.randint(1, 1000))))}".encode('utf-8'))
     # We do not need the ticket id here for this case
     # ticket_id = ticket_id + 1 # important to increment the number after sent to the client
 
@@ -59,7 +59,7 @@ while True:
         print(received_phrases)
         f = open('vault.txt', 'a')
         message2 = str(message2)
-        message2 = str(message2[0:8])
+        message2 = str(message2[0:20])
         message = f.write(f"{message2}\n")
         f.close()
 
