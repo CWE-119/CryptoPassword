@@ -74,6 +74,6 @@ original_message = private_key.decrypt(
 print(original_message)
 
 # this creates the Public and Public Keys
-f = open('test.txt', 'rb')
+f = open('vault.txt', 'rb')
 message = f.read()
 f.close()
