@@ -39,4 +39,4 @@ print(lists)
 
 generated_seed = str(generate_partial_phrase(float(lists[4])))
 print(f"This is the generated seed: {generated_seed}")
-client.send(f"{generated_seed}\n".encode('utf-8'))
+client.send(f"{generated_seed}".encode('utf-8'))

@@ -1,9 +1,8 @@
-
 import random
 
 Generated_OTP = []
 
-f = open('vault.txt','r')
+f = open('vault.txt', 'r')
 for i in f:
     Generated_OTP.append(i[0:8])
     print(i)
@@ -11,14 +10,14 @@ for i in f:
 print("These are the generated total numeric OTPs")
 print(Generated_OTP)
 
-index = random.randint(0,len(Generated_OTP))
+index = random.randint(0, len(Generated_OTP))
 print(index)
 
 print("This is the generated number output for use......................")
 print(Generated_OTP[index])
 
 print("This is the generated character based OTP for use................")
-#Generating the Character Based OTP algorithm:
+# Generating the Character Based OTP algorithm:
 alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 numeric_OTP = str(Generated_OTP[index])
 input_length = len(numeric_OTP)
