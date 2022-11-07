@@ -2,14 +2,15 @@ import socket
 import random
 import time
 
-
 times = time.gmtime(0)
 epoch = time.asctime(times)
-t = round(time.time()*1000)
+t = round(time.time() * 1000)
 t = str(t)
 t = t[-5:]
 print(t)
-    # t = int(t)
+
+
+# t = int(t)
 
 def generate_partial_phrase(x):
     random.seed(x)
@@ -17,7 +18,9 @@ def generate_partial_phrase(x):
     z = y
     random.seed(z)
     return random.random()
-randoms = (int(generate_partial_phrase(t)*10**8))
+
+
+randoms = (int(generate_partial_phrase(t) * 10 ** 8))
 
 HOST = '127.0.0.1'
 
