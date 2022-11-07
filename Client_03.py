@@ -1,11 +1,9 @@
-# todo server message theke random value niye tmr random e push kore "generated_seed = apiNumber ** (ei khane boshate
-#  hobe) " API_ cryptography
 import requests
 import random
 import socket
 
 import re
-import math
+
 
 API_URL = "https://api-inference.huggingface.co/models/xlm-roberta-base"
 headers = {"Authorization": f"Bearer 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"}
@@ -20,7 +18,7 @@ def query(payload):
 # The user should be giving a unique response phrase to generate the key words
 
 output = query({
-    "inputs": "The number is <mask> and nothing .",
+    "inputs": "<mask>",
 })
 
 passwords_keys = []
@@ -32,7 +30,7 @@ for i in output:
             print(i[j])
             x = i[j]
             x = x.split(" ")
-            passwords_keys.append(x[-3])
+            passwords_keys.append(x[0])
 
 dictionary = "1234567890"
 
