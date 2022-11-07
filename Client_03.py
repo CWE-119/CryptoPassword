@@ -33,7 +33,6 @@ for i in output:
             x = i[j]
             x = x.split(" ")
             passwords_keys.append(x[-3])
-print(passwords_keys)
 
 dictionary = "1234567890"
 
@@ -83,4 +82,4 @@ print(lists)
 
 generated_seed = apiNumber + num
 print(f"This is the generated seed: {generated_seed}")
-client.send(f"{generated_seed}\n".encode('utf-8'))
+client.send(f"{generated_seed}".encode('utf-8'))

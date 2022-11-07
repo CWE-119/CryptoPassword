@@ -48,7 +48,7 @@ while True:
     # We need to store the message2 as the instance of the password received due to the random seed sent from the server
     message2 = communication_socket.recv(1024).decode('utf-8')
     print(f"Message from the client is {message2}")
-    message2 = float(message2) * (10 ** 8)
+    # message2 = float(message2) * (10 ** 8)
 
     # Count is used here to ensure that the message2 is only append into the received_phrases only once and not
     # repeatedly
