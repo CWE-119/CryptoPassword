@@ -59,7 +59,7 @@ while True:
         print(received_phrases)
         f = open('vault.txt', 'a')
         message2 = str(message2)
-        message2 = str(message2[0:20])
+        message2 = str(message2[0:])
         message = f.write(f"{message2}\n")
         f.close()
 

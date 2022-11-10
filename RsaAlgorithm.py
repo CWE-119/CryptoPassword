@@ -48,7 +48,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
 # message = b'encrypt me!'
-f = open('RSA/text.txt', 'rb')
+f = open('vault.txt', 'rb')
 message = f.read()
 f.close()
 encrypted = public_key.encrypt(
