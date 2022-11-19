@@ -15,7 +15,7 @@ def query(payload):
 
 
 # step to use here:
-# The user should be giving a unique response phrase to generate the key words
+# The user should be giving a unique response phrase to generate the keywords
 
 output = query({
     "inputs": "<mask>",

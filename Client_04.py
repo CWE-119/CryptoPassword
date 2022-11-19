@@ -6,7 +6,8 @@ times = time.gmtime(0)
 epoch = time.asctime(times)
 t = round(time.time() * 1000)
 t = str(t)
-t = t[-5:]
+t = t[int(-random.random()):int(t)]
+t = int(t) ** abs(int(random.random()*10000))
 print(t)
 
 

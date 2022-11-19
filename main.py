@@ -1,7 +1,7 @@
 import CroptographyModulePassword
 from CroptographyModulePassword.HashingFile import hashfile
 
-command = input("select your algorithm: ")
+command = input("select your algorithm >? ")
 
 
 def run(runfile):
@@ -14,6 +14,6 @@ if command == "1":
 if command == "2":
     x = hashfile()
     print(x)
-    f = open("vault.txt", "a")
+    f = open("hash.txt", "a")
     hashM = f.write(f"{x}\n")
     f.close()
