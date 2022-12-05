@@ -97,3 +97,4 @@ print(lists)
 generated_seed = t
 print(f"This is the generated seed: {generated_seed}")
 client.send(f"{generated_seed}".encode('utf-8'))
+
