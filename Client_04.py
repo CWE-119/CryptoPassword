@@ -2,8 +2,6 @@ import socket
 import random
 import time
 
-times = time.gmtime(0)
-epoch = time.asctime(times)
 t = round(time.time() * 1000)
 t = str(t)
 t = t[int(-random.random()):int(t)]
